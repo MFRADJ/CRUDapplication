@@ -25,6 +25,10 @@ public class EmployeeController {
     public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
         return new ResponseEntity<Employee>(employeesService.saveEmployee(employee), HttpStatus.CREATED);
     }
-    // build get all emplo
+    // build get all employees REST API
+    @GetMapping()
+    public ResponseEntity<Employee> getAllEmployees() {
+        return employeesService.getAllEmployees();
+    }
 
 }
